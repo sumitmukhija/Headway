@@ -12,13 +12,15 @@ const Card = (props: any) => {
                 <button onClick={(e) => {
                     props.dispatch(removeTaskAction({id: props.id}));
                 }
-                }>X</button></div>
+                }>x</button></div>
         </div>
     );
 }
 
 const mapStateToProps = (state: any) => {
-    
+    return {
+        tasks: state
+    }
 };
 
 export default connect(mapStateToProps)(Card);

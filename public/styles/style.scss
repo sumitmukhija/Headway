@@ -52,6 +52,9 @@
                 
                 button{
                     border: none;
+                    font-size: $m*1.2;
+                    background: transparent;
+                    color: $borderColor;
                     &:active{
                         outline: none;
                     }
