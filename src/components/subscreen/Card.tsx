@@ -1,4 +1,6 @@
 import React from 'react';
+import { removeTaskAction } from '../../action/task';
+import { connect } from 'react-redux';
 
 const Card = (props: any) => {
     return (
@@ -6,9 +8,17 @@ const Card = (props: any) => {
             <div className="ctext">
                 {props.text}
             </div>
-            <div className="remove" onClick = {(e) => {}}>x</div>
+            <div className="remove">
+                <button onClick={(e) => {
+                    props.dispatch(removeTaskAction({id: props.id}));
+                }
+                }>X</button></div>
         </div>
     );
 }
 
-export default Card;
+const mapStateToProps = (state: any) => {
+    
+};
+
+export default connect(mapStateToProps)(Card);

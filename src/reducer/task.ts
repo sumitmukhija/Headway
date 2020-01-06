@@ -6,7 +6,7 @@ export const taskReducer = (state = defaultState, action: any) => {
         case 'ADD_TASK':
             return state.concat(action.task);
         case 'UPDATE_TASK_CAT':
-            return  state.map((t: any) => {
+            return state.map((t: any) => {
                 if (t.id === action.id) {
                     return { ...t, category: action.cat};
                 }

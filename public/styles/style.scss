@@ -48,7 +48,14 @@
                 font-size: $m* 1.4;
                 align-self: flex-start;
                 justify-self: flex-end;
-                color: $borderColor
+                color: $borderColor;
+                
+                button{
+                    border: none;
+                    &:active{
+                        outline: none;
+                    }
+                }
             }
         }
     }
