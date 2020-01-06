@@ -1,0 +1,153 @@
+@import "./config/colors";
+@import "./base/base";
+@import "./config/sizes";
+@mixin sections {
+    border-radius: 4px;
+    background-color:$background;
+    width: 25vw;
+    .section-header{
+        width: 25vw;
+        height: 5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid $borderColor;
+        .section-header-text{
+            font-size: $l/1.5;
+            font-weight: 100;
+            margin-right: 1vw;
+        }
+
+        .section-header-emoji{
+            font-size: $l;
+        }
+    }
+
+    .card-holder{
+        height: 66vh;
+        padding: $s;
+        overflow-y: scroll;
+        .card{
+            background-color: $W;
+            border: 1px solid $borderColor;
+            border-radius: 4px;
+            font-size: $m;
+            padding: $s;
+            min-height: $xl;
+            margin-bottom: $s;
+            display: flex;
+            animation: fadein 1s;
+            -moz-animation: fadein 1s; 
+            -webkit-animation: fadein 1s; 
+            -o-animation: fadein 1s; 
+            .ctext{
+                flex-grow: 1;
+            }
+            .remove{
+                text-align: end;
+                font-size: $m* 1.4;
+                align-self: flex-start;
+                justify-self: flex-end;
+                color: $borderColor
+            }
+        }
+    }
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    .board{
+        margin-top: 2%;
+        display: flex;
+        height: 85vh;
+        width: 100vw;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        .task{
+            @include sections();
+        }
+        .in-progress{
+            @include sections();
+        }
+        .complete{
+            @include sections();
+        }
+    }
+
+    .action{
+        margin-top: $m;
+        display: flex;
+        height: 12vh;
+        width: 100vw;
+        align-items: center;
+        justify-content: space-around;
+
+        .form-container{
+            padding: $s;
+            input[type=text]{
+                width: 82vw;
+                height: 8vh;
+                font-size: $m;
+                text-align: center;
+                &:focus{
+                    outline: none;
+                }
+            }
+
+            input[type=submit]{
+                margin-left: 1vw;
+                background-color: $btn;
+                color: $W;
+                font-size: $m;
+                width: 3vw;
+                vertical-align: middle;
+                border-radius:1.5vw;
+                text-align: center;
+                height: 3vw;
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+// Animations
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
