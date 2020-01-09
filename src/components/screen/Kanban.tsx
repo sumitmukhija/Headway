@@ -27,6 +27,10 @@ export default class Kanban extends React.Component{
         return (
             <div className="container">
                 <audio ref="popAudio" media-player="audioPlayer" crossOrigin="anonymous" src={'../../../resources/audio/pop.mp3'} id="popAudio"></audio>
+                
+                <div className="mobile-blocker">
+                    Sorry. You can only access Kanban board on a laptop or a tablet :(
+                </div>
                 <Board playAudio={this.playAudio} />
                 <ActionArea playAudio={this.playAudio}/>
             </div>

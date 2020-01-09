@@ -64,6 +64,32 @@
     }
 }
 
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 1023px) {
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $m;
+        height: 100vh;
+        .board{
+            display: none;
+            height: 100vh;
+        }
+
+        .mobile-blocker{
+            display: block;
+            font-size: $l;
+            text-align: center;
+        }
+
+        .action{
+            display: none;
+        }
+    }
+}
+
+@media only screen and (min-device-width : 1024px){
 .container{
     width: 100vw;
     height: 100vh;
@@ -72,6 +98,10 @@
     justify-content: center;
     align-items: flex-start;
     overflow: hidden;
+    
+    .mobile-blocker{
+            display: none;
+        }
     .board{
         margin-top: 2%;
         display: flex;
@@ -127,7 +157,7 @@
         }
     }
 }
-
+}
 // Animations
 @keyframes fadein {
     from {
